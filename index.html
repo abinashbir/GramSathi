@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jal Samadhan - Digital Water Management</title>
+    <style>
+        /* --- Google Font Import --- */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        /* --- Global Styles & Resets --- */
+        :root {
+            --primary-color: #007BFF; /* A vibrant blue for trust and water */
+            --secondary-color: #28a745; /* Green for sustainability */
+            --dark-color: #333;
+            --light-color: #f4f4f4;
+            --text-color: #555;
+            --container-width: 85%;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            width: var(--container-width);
+            padding: 0 20px;
+        }
+
+        h1, h2, h3 {
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+        }
+        
+        h1 { font-size: 2.8rem; }
+        h2 { font-size: 2.2rem; }
+        
+        section {
+            padding: 4rem 0;
+        }
+
+        /* --- Header & Navigation --- */
+        .navbar {
+            background: #fff;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .navbar .logo i {
+            margin-right: 8px;
+        }
+
+        .navbar ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .navbar ul li a {
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .navbar ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1594498653334-a1013253a532?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
+            color: #fff;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero h1 {
+            color: #fff;
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 1.5rem auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: var(--primary-color);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #0056b3;
+        }
+
+        /* --- Features Section --- */
+        #features {
+            background: var(--light-color);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-header h2 {
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-header h2::after {
+            content: '';
+            width: 70px;
+            height: 3px;
+            background: var(--primary-color);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .feature-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        .feature-card i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.3rem;
+        }
+
+        /* --- Outcomes Section --- */
+        .outcomes-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .outcomes-list ul {
+            list-style: none;
+        }
+        
+        .outcomes-list li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .outcomes-list i {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-right: 1rem;
+            margin-top: 4px;
+        }
+
+        .outcomes-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        /* --- Footer --- */
+        .footer {
+            background: var(--dark-color);
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .footer p {
+            margin: 0;
+            color: #ccc;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .hero h1 { font-size: 2.8rem; }
+            
+            .navbar .container { flex-direction: column; }
+            .navbar ul { margin-top: 1rem; }
+            
+            .outcomes-grid { grid-template-columns: 1fr; }
+            .outcomes-image { margin-top: 2rem; }
+        }
+
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <a href="#" class="logo"><i class="fas fa-water"></i> Jal Samadhan</a>
+            <nav>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#features">Key Features</a></li>
+                    <li><a href="#outcomes">Outcomes</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="hero">
+            <div class="container">
+                <h1>Empowering Communities with Sustainable Water Solutions</h1>
+                <p>A low-cost, user-friendly digital tool for Gram Panchayats to monitor, manage, and sustain rural piped water supply systems under the Jal Jeevan Mission.</p>
+                <a href="#features" class="btn">Discover the Solution</a>
+            </div>
+        </section>
+
+        <section id="features">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Core Features</h2>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <h3>Easy Monitoring</h3>
+                        <p>Track infrastructure performance, pump running hours, and valve status through a simple, intuitive dashboard.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-search"></i>
+                        <h3>Early Fault Detection</h3>
+                        <p>Leverage predictive insights from operational data to identify potential leakages and system failures before they happen.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-vial"></i>
+                        <h3>Water Quality Tracking</h3>
+                        <p>Record and access results from portable digital testing kits to ensure a consistent supply of safe drinking water.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-users"></i>
+                        <h3>Community Empowerment</h3>
+                        <p>Equip VWSCs with the data they need for local decision-making, promoting ownership and accountability.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="outcomes">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Expected Outcomes</h2>
+                </div>
+                <div class="outcomes-grid">
+                    <div class="outcomes-list">
+                        <ul>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Improved Reliability</strong>
+                                    <p>Village functionaries can perform routine checks, leading to fewer breakdowns and more reliable water service.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Reduced System Failures</strong>
+                                    <p>Timely maintenance based on predictive data minimizes costly repairs and system downtime.</p>
+                                </div>
+                            </li>
+                             <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Assured Water Safety</strong>
+                                    <p>Regular, digitally recorded quality tests ensure that the water reaching households is safe for consumption.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Greater Local Ownership</strong>
+                                    <p>Gram Panchayats are empowered to manage their water assets independently, reducing reliance on external agencies.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="outcomes-image">
+                        <img src="https://www.google.com/imgres?q=farmer%20with%20smart%20phone&imgurl=https%3A%2F%2Fmedia.istockphoto.com%2Fid%2F1318886610%2Fphoto%2Findian-farmer-taking-photo-with-his-smartphone-of-green-paddy-or-wheat-plant-in-green.jpg%3Fs%3D612x612%26w%3D0%26k%3D20%26c%3DN3a2H2L9RihuIJcDxA4-YtqAYhIoh1oGLCe3EFtsxcg%3D&imgrefurl=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Findian-farmer-using-phone&docid=FcYRY2xm_DWV9M&tbnid=xSJlm1SlFYXgmM&vet=12ahUKEwi89s2w36aQAxXCUGwGHaVkGgMQM3oECCkQAA..i&w=612&h=407&hcb=2&ved=2ahUKEwi89s2w36aQAxXCUGwGHaVkGgMQM3oECCkQAA" alt="A person in a rural area using a smartphone to check data.">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" id="contact">
+        <div class="container">
+            <p>&copy; 2025 Jal Samadhan. All Rights Reserved. | Empowering Rural India</p>
+        </div>
+    </footer>
+
+</body>
+</html>
